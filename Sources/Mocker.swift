@@ -63,7 +63,7 @@ public struct Mocker {
     /// - Returns: `true` if it should be mocked, `false` if the URL is registered as ignored.
     public static func shouldHandle(_ url: URL) -> Bool {
         shared.queue.sync {
-            return shared.mocks.contains(where: { $0.url = url })
+            return shared.mocks.contains(where: { $0.url == url })
         }
     }
 
