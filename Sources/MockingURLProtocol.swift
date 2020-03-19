@@ -82,7 +82,7 @@ public final class MockingURLProtocol: URLProtocol {
     /// Overrides needed to define a valid inheritance of URLProtocol.
     override public class func canInit(with request: URLRequest) -> Bool {
         guard let url = request.url else { return false }
-        return false
+        return Mocker.shouldHandle(url)
     }
 }
 
